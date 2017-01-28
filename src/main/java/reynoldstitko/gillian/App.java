@@ -17,13 +17,13 @@ public class App {
 
         switch (chooseGame) {
             case 1: {
-                theGame = new BlackJackGame();
+                theGame = new BlackJackGame(); //Using polymorphism
                 System.out.print("You chose to play BlackJack!\n");
                 break;
             }
 
             case 2: {
-                theGame = new GoFishGame();
+                theGame = new GoFishGame(); //Using polymorphism
                 System.out.print("You chose to play Go Fish!\n");
                 break;
             }
@@ -32,7 +32,7 @@ public class App {
                 break;
             }
         }
-        theGame.start();
+        theGame.start(); //Each game will play its version of start() appropriately
         scanner.close();
     }
 }

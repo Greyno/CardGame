@@ -23,8 +23,8 @@ public class HandTest {
     @Test
     public void addCardsToHandTest(){
         ArrayList<Card> temp = new ArrayList<>();
-        temp.add(new Card("Two", "Diamonds"));
-        temp.add(new Card("Three", "Hearts"));
+        temp.add(new Card("Two"));
+        temp.add(new Card("Three"));
         theHand.addCardsToHand(temp);
         int expected = 2;
         int actual = theHand.getTheHand().size();
@@ -32,12 +32,19 @@ public class HandTest {
     }
 
     @Test
+    public void addCardToHandTest(){
+        Card card = new Card("Two");
+        theHand.addCardToHand(card);
+        assertTrue("Expect a true", theHand.checkHandForCard("Two"));
+    }
+
+    @Test
     public void removeCardFromHandTest(){
         ArrayList<Card> temp = new ArrayList<>();
-        temp.add(new Card("Two", "Diamonds"));
+        temp.add(new Card("Two"));
         theHand.addCardsToHand(temp);
-        String expected = new Card("Two", "Diamonds").toString();
-        String actual = theHand.removeCardFromHand("Two", "Diamonds").toString();
+        String expected = new Card("Two").toString();
+        String actual = theHand.removeCardFromHand("Two").toString();
         assertEquals("Removing two of diamonds", expected, actual);
 
     }
@@ -45,8 +52,20 @@ public class HandTest {
     @Test
     public void checkCardForHandTest(){
         ArrayList<Card> temp = new ArrayList<>();
-        temp.add(new Card("Three", "Clubs"));
+        temp.add(new Card("Three"));
         theHand.addCardsToHand(temp);
-        assertTrue("Expect a true", theHand.checkHandForCard("Three", "Clubs"));
+        assertTrue("Expect a true", theHand.checkHandForCard("Three"));
+    }
+
+    @Test
+    public void countCardsInHandOfRankTest(){
+        ArrayList<Card> temp = new ArrayList<>();
+        temp.add(new Card("Three"));
+        temp.add(new Card("Two"));
+        temp.add(new Card("Three"));
+        theHand.addCardsToHand(temp);
+        int expected = 2;
+        int actual = theHand.countCardsInHandOfRank(temp, "Three");
+        assertEquals("I expect to get 2 cards", expected, actual);
     }
 }

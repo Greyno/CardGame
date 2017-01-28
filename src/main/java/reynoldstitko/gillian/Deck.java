@@ -13,19 +13,19 @@ public class Deck {
 
     public Deck(){
         //-------Diamonds
-        Card aceDiamonds = new Card("Ace", "Diamond");
-        Card twoDiamonds = new Card("Two", "Diamond");
-        Card threeDiamonds = new Card("Three", "Diamond");
-        Card fourDiamonds = new Card("Four", "Diamond");
-        Card fiveDiamonds = new Card("Five", "Diamond");
-        Card sixDiamonds = new Card("Six", "Diamond");
-        Card sevenDiamonds = new Card("Seven", "Diamond");
-        Card eightDiamonds = new Card("Eight", "Diamond");
-        Card nineDiamonds = new Card("Nine", "Diamond");
-        Card tenDiamonds = new Card("Ten", "Diamond");
-        Card jackDiamonds = new Card("Jack", "Diamond");
-        Card queenDiamonds = new Card("Queen", "Diamond");
-        Card kingDiamonds = new Card("King", "Diamond");
+        Card aceDiamonds = new Card("Ace", "Diamonds");
+        Card twoDiamonds = new Card("Two", "Diamonds");
+        Card threeDiamonds = new Card("Three", "Diamonds");
+        Card fourDiamonds = new Card("Four", "Diamonds");
+        Card fiveDiamonds = new Card("Five", "Diamonds");
+        Card sixDiamonds = new Card("Six", "Diamonds");
+        Card sevenDiamonds = new Card("Seven", "Diamonds");
+        Card eightDiamonds = new Card("Eight", "Diamonds");
+        Card nineDiamonds = new Card("Nine", "Diamonds");
+        Card tenDiamonds = new Card("Ten", "Diamonds");
+        Card jackDiamonds = new Card("Jack", "Diamonds");
+        Card queenDiamonds = new Card("Queen", "Diamonds");
+        Card kingDiamonds = new Card("King", "Diamonds");
 
         cards.add(aceDiamonds);
         cards.add(twoDiamonds);

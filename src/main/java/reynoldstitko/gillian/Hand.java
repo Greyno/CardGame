@@ -8,21 +8,30 @@ import java.util.ArrayList;
 public class Hand {
 
     private ArrayList<Card> theHand = new ArrayList<Card>();
+    int cardCount = 0;
 
-    public boolean checkHandForCard(String rank, String suit) {
+//    public boolean checkHandForCard(String rank, String suit) {
+//        for (int i = 0; i < theHand.size(); i++) {
+//            if (theHand.get(i).getRank().equalsIgnoreCase(rank) &&
+//                    theHand.get(i).getSuit().equalsIgnoreCase(suit)) {
+//                return true;
+//            }
+//        }
+//        return false;
+//    }
+
+    public boolean checkHandForCard(String rank) {
         for (int i = 0; i < theHand.size(); i++) {
-            if (theHand.get(i).getRank().equalsIgnoreCase(rank) &&
-                    theHand.get(i).getSuit().equalsIgnoreCase(suit)) {
+            if (theHand.get(i).getRank().equalsIgnoreCase(rank)) {
                 return true;
             }
         }
         return false;
     }
 
-    public Card removeCardFromHand(String rank, String suit){
+    public Card removeCardFromHand(String rank){
         for(int i = 0; i < theHand.size(); i++){
-            if(theHand.get(i).getRank().equalsIgnoreCase(rank) &&
-                    theHand.get(i).getSuit().equalsIgnoreCase(suit)){
+            if(theHand.get(i).getRank().equalsIgnoreCase(rank)){
                 Card temp = theHand.get(i);
                 theHand.remove(i);
                 return temp;
@@ -37,8 +46,24 @@ public class Hand {
         return;
     }
 
+    public void addCardToHand(Card cardToAdd){
+        theHand.add(cardToAdd);
+        return;
+    }
+
 
     public ArrayList<Card> getTheHand() {
+
         return theHand;
+    }
+
+    public int countCardsInHandOfRank(ArrayList<Card> cards, String rank){
+        for(int i = 0; i <cards.size(); i++){
+
+            if(cards.get(i).getRank().equalsIgnoreCase(rank)){
+             cardCount = cardCount + 1;
+            }
+        }
+        return cardCount;
     }
 }
