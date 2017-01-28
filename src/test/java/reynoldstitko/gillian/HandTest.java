@@ -59,13 +59,13 @@ public class HandTest {
 
     @Test
     public void countCardsInHandOfRankTest(){
-        ArrayList<Card> temp = new ArrayList<>();
-        temp.add(new Card("Three"));
+        ArrayList<Card> temp = new ArrayList<>(); //create a card array
+        temp.add(new Card("Three")); //Add cards to the array
         temp.add(new Card("Two"));
         temp.add(new Card("Three"));
-        theHand.addCardsToHand(temp);
+        theHand.addCardsToHand(temp); //add cards to a hand
         int expected = 2;
         int actual = theHand.countCardsInHandOfRank(temp, "Three");
-        assertEquals("I expect to get 2 cards", expected, actual);
+        assertEquals("I expect to get 2 cards with a Three rank", expected, actual);
     }
 }
