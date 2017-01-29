@@ -6,11 +6,13 @@ import java.util.Scanner;
  * Created by gillianreynolds-titko on 1/27/17.
  */
 public class BlackJackGame extends Game {
-    public void start(){
+    public void start() {
 
         Scanner scanner = new Scanner(System.in);
         Hand playerOneHand = new Hand();
         Hand playerTwoHand = new Hand();
+        int playerOneTotal = 0;
+        int playerTwoTotal = 0;
 
         Deck cardDeck = new Deck();
 
@@ -23,8 +25,8 @@ public class BlackJackGame extends Game {
 
         //Show player1 their cards
         System.out.println("Player 1, you have the following cards:");
-        for(int i = 0; i < playerOneHand.getTheHand().size(); i++){
-            System.out.print(playerOneHand.getTheHand().get(i)+ " \n");
+        for (int i = 0; i < playerOneHand.getTheHand().size(); i++) {
+            System.out.print(playerOneHand.getTheHand().get(i) + " \n");
         }
 
         System.out.println("Player 1, do you want to Hit or Stay?");
@@ -33,32 +35,32 @@ public class BlackJackGame extends Game {
         boolean playerTwoPlaying = false;
         String response = scanner.next();
 
-        while(response.equalsIgnoreCase("Hit") && playerOnePlaying == true){
+        while (response.equalsIgnoreCase("Hit") && playerOnePlaying == true) {
             playerOneHand.addCardsToHand(cardDeck.deal(1));
             System.out.println("Player 1, you have the following cards:");
-            for(int i = 0; i < playerOneHand.getTheHand().size(); i++){
-                System.out.print(playerOneHand.getTheHand().get(i)+ " \n");
+            for (int i = 0; i < playerOneHand.getTheHand().size(); i++) {
+                System.out.print(playerOneHand.getTheHand().get(i) + " \n");
             }
             System.out.println("Player 1, do you want to Hit or Stay?");
             response = scanner.next();
-            int handSum = playerOneHand.sumRankValues(playerOneHand.getTheHand());
-            System.out.println(handSum);
-            if(response.equalsIgnoreCase("Stay")){
+
+            if (response.equalsIgnoreCase("Stay")) {
                 playerOnePlaying = false;
                 playerTwoPlaying = true;
+                playerOneTotal = playerOneHand.sumRankValues(playerOneHand.getTheHand());
                 break;
             }
         }
 
         System.out.println("Player 2, you have the following cards:");
-        for(int i = 0; i < playerTwoHand.getTheHand().size(); i++){
-            System.out.print(playerTwoHand.getTheHand().get(i)+ " \n");
+        for (int i = 0; i < playerTwoHand.getTheHand().size(); i++) {
+            System.out.print(playerTwoHand.getTheHand().get(i) + " \n");
         }
 
         System.out.println("Player 2, do you want to Hit or Stay?");
         response = scanner.next();
 
-        while(response.equalsIgnoreCase("Hit") && playerTwoPlaying == true) {
+        while (response.equalsIgnoreCase("Hit") && playerTwoPlaying == true) {
             //Show player2 their cards
             playerTwoHand.addCardsToHand(cardDeck.deal(1));
             System.out.println("Player 2, you have the following cards:");
@@ -68,24 +70,22 @@ public class BlackJackGame extends Game {
             System.out.println("Player 2, do you want to Hit or Stay?");
             response = scanner.next();
 
-                if(response.equalsIgnoreCase("Stay")){
-                    playerTwoPlaying = false;
-                    break;
-                }
+            if (response.equalsIgnoreCase("Stay")) {
+                playerTwoPlaying = false;
+                playerTwoTotal = playerTwoHand.sumRankValues(playerTwoHand.getTheHand());
+                break;
             }
+        }
 
-        if(playerOnePlaying == false && playerTwoPlaying == false) {
-            //Show gameresults here
+        if (playerOnePlaying == false && playerTwoPlaying == false) {
+            //Show game results here
+            System.out.print("Player 1 you got " + playerOneTotal + " points\n");
+            System.out.print("Player 2 you got " + playerTwoTotal + " points\n");
             System.out.println("Game over!");
         }
 
-        }
+    }
 
-        }
+}
 
-        //Player one plays (hit) and gets dealt a card as long as their  < 21 or they choose to stay
-
-        //Dealer plays while the sum of their cards > 21 or they choose to stay; automated dealer stops at 17
-
-        //Once both loops are completed, compare the sums to see who was closer to 21 to determine the winner
 

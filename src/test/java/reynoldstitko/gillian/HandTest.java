@@ -70,7 +70,7 @@ public class HandTest {
     }
 
     @Test
-    public  void sumRankValuesTest(){
+    public  void sumRankValuesTest(){ //Add the ability to sum the numbers (rank) on the card's face
         ArrayList<Card> card = new ArrayList<>();
         card.add(new Card("Two", "Hearts"));
         card.add(new Card("King", "Spaced"));
