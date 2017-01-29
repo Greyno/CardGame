@@ -27,7 +27,6 @@ public class GoFishGame extends Game {
 
         while(isGameOver == false){
 
-            int cardsToRemove = 0;
             //Show the player1 list of cards
             System.out.println("Player 1, you have the following cards:");
             for(int i = 0; i < playerOneHand.getTheHand().size(); i++){
@@ -138,11 +137,11 @@ public class GoFishGame extends Game {
                     break;
                 }
             }
-            //Player1 can go again - ask player1 which rank they want to get
-            //Player2 gets to play once player1 has to go fish
+
         }
         System.out.print("Player 1, you had "+ playerOneHand.getTheHand().size()+" cards left\n");
         System.out.print("Player 2, you had "+ playerTwoHand.getTheHand().size()+" cards left\n");
         System.out.print("Game over!");
+        scanner.close();
     }
 }

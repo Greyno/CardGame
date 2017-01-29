@@ -131,7 +131,7 @@ public class Deck {
 
     public void shuffle(){
         //Look at Collections.shuffle
-        Collections.shuffle(cards); //Using the built-iin Collections Class .shuffle() method, so no need to unit test
+        Collections.shuffle(cards); //Using the built-in Collections Class .shuffle() method, so no need to unit test
     }
 
     public ArrayList<Card> deal(int numOfCards){

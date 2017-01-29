@@ -1,5 +1,7 @@
 package reynoldstitko.gillian;
 
+import java.util.ArrayList;
+
 /**
  * Created by gillianreynolds-titko on 1/27/17.
  */
@@ -43,4 +45,5 @@ public class Card {
         String temp = this.getRank() + " "+ this.getSuit();
         return temp;
     }
+
 }
