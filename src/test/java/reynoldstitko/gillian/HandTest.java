@@ -68,4 +68,17 @@ public class HandTest {
         int actual = theHand.countCardsInHandOfRank(temp, "Three");
         assertEquals("I expect to get 2 cards with a Three rank", expected, actual);
     }
+
+    @Test
+    public  void sumRankValuesTest(){
+        ArrayList<Card> card = new ArrayList<>();
+        card.add(new Card("Two", "Hearts"));
+        card.add(new Card("King", "Spaced"));
+        theHand.addCardsToHand(card);
+        int expected = 15;
+        int actual = theHand.sumRankValues(card);
+        assertEquals("I expect a sum of 15", expected, actual);
+    }
+
+
 }

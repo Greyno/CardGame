@@ -66,4 +66,12 @@ public class Hand {
         }
         return cardCount;
     }
+
+    public int sumRankValues(ArrayList<Card> cards){
+        int sum = 0;
+        for(Card card: cards){
+            sum = sum + card.getRankValue();
+        }
+        return sum;
+    }
 }

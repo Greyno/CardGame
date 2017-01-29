@@ -41,6 +41,8 @@ public class BlackJackGame extends Game {
             }
             System.out.println("Player 1, do you want to Hit or Stay?");
             response = scanner.next();
+            int handSum = playerOneHand.sumRankValues(playerOneHand.getTheHand());
+            System.out.println(handSum);
             if(response.equalsIgnoreCase("Stay")){
                 playerOnePlaying = false;
                 playerTwoPlaying = true;

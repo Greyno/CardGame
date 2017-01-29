@@ -25,7 +25,7 @@ public class DeckTest {
         int expected = 3;
         ArrayList<Card> testHand = theDeck.deal(3);
         int actual = testHand.size();
-        assertEquals("I expect the dealth hand to be 3", expected, actual);
+        assertEquals("I expect the dealt hand to be 3", expected, actual);
     }
 
 }
