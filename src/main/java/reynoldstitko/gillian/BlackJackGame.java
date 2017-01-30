@@ -41,7 +41,7 @@ public class BlackJackGame extends Game {
                 playerTwoPlaying = true;
                 playerOneTotal = playerOneHand.sumRankValues(playerOneHand.getTheHand());
             }
-        } else { //Account for a playing "staying" on the first turn
+        } else { //Account for a player "staying" on the first turn
             playerOnePlaying = false;
             playerTwoPlaying = true;
             playerOneTotal = playerOneHand.sumRankValues(playerOneHand.getTheHand());
