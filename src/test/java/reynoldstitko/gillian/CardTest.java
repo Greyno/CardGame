@@ -25,13 +25,4 @@ public class CardTest {
         assertEquals("I expect to return a 4", expected, actual);
     }
 
-    @Test
-    public void sumValuesTest(){
-     int expected = 3;
-        ArrayList<Card> cards = new ArrayList<>();
-        cards.add(new Card("Three", "Spades"));
-        cards.add(new Card("Three", "Hearts"));
-        //int actual = cards.sumRankValues();
-        //assertEquals("I expect a sum of 3", expected, actual);
-    }
 }
