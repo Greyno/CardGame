@@ -89,6 +89,7 @@ public class BlackJackGame extends Game {
 
     }
 
+    //--Refactor and add a few helper methods
     public void dealTheCards(){
         //Deal 2 cards to each player, including the dealer
         playerOneHand.addCardsToHand(cardDeck.deal(2));
