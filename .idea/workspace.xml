@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dedc482f-549b-4f14-a498-4e85ec8a5b3b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/reynoldstitko/gillian/App.java" afterPath="$PROJECT_DIR$/src/main/java/reynoldstitko/gillian/App.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/reynoldstitko/gillian/BlackJackGame.java" afterPath="$PROJECT_DIR$/src/main/java/reynoldstitko/gillian/BlackJackGame.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/reynoldstitko/gillian/GoFishGame.java" afterPath="$PROJECT_DIR$/src/main/java/reynoldstitko/gillian/GoFishGame.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -84,8 +82,8 @@
       <file leaf-file-name="BlackJackGame.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/reynoldstitko/gillian/BlackJackGame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="645">
-              <caret line="82" column="16" lean-forward="false" selection-start-line="82" selection-start-column="16" selection-end-line="82" selection-end-column="16" />
+            <state relative-caret-position="309">
+              <caret line="96" column="37" lean-forward="false" selection-start-line="96" selection-start-column="37" selection-end-line="96" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -833,7 +831,7 @@
       <workItem from="1485652046718" duration="83000" />
       <workItem from="1485703705867" duration="11730000" />
       <workItem from="1485774859300" duration="439000" />
-      <workItem from="1485781172489" duration="12582000" />
+      <workItem from="1485781172489" duration="12718000" />
     </task>
     <servers />
   </component>
@@ -870,7 +868,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54593000" />
+    <option name="totallyTimeSpent" value="54729000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="245" y="44" width="1295" height="955" extended-state="0" />
@@ -1335,8 +1333,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/reynoldstitko/gillian/BlackJackGame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="82" column="16" lean-forward="false" selection-start-line="82" selection-start-column="16" selection-end-line="82" selection-end-column="16" />
+        <state relative-caret-position="309">
+          <caret line="96" column="37" lean-forward="false" selection-start-line="96" selection-start-column="37" selection-end-line="96" selection-end-column="37" />
           <folding />
         </state>
       </provider>

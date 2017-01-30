@@ -18,7 +18,7 @@ public class BlackJackGame extends Game {
 
     public void start() {
 
-        dealAGoFishHand();
+        dealABlackJackHand();
 
         showPlayerOneTheirCards();
 
@@ -90,11 +90,11 @@ public class BlackJackGame extends Game {
         } else System.out.println("Test");
     }
 
-    public void dealAGoFishHand(){
+    public void dealABlackJackHand(){
         //Shuffle the deck
         cardDeck.shuffle();
 
-        //Deal 2 cards to each player, including the dealer
+        //Deal 2 cards to each player
         playerOneHand.addCardsToHand(cardDeck.deal(2));
         playerTwoHand.addCardsToHand(cardDeck.deal(2));
     }
