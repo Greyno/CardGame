@@ -22,16 +22,11 @@ public class BlackJackGame extends Game {
 
         showPlayerOneTheirCards();
 
-        //Show player1 their cards
-//        System.out.println("Player 1, you have the following cards:");
-//        for (int i = 0; i < playerOneHand.getTheHand().size(); i++) {
-//            System.out.print(playerOneHand.getTheHand().get(i) + " \n");
-//        }
-
         System.out.println("Player 1, do you want to Hit or Stay?");
         String response = scanner.next();
 
         //Play a round with player One
+
         if (response.equalsIgnoreCase("Hit") && playerOnePlaying == true) {
             playerOneHand.addCardsToHand(cardDeck.deal(1));
             System.out.println("Player 1, you have the following cards:");
@@ -53,10 +48,6 @@ public class BlackJackGame extends Game {
         }
 
         showPlayerTwoTheirCards();
-//        System.out.println("Player 2, you have the following cards:");
-//        for (int i = 0; i < playerTwoHand.getTheHand().size(); i++) {
-//            System.out.print(playerTwoHand.getTheHand().get(i) + " \n");
-//        }
 
         System.out.println("Player 2, do you want to Hit or Stay?");
         response = scanner.next();
@@ -78,7 +69,7 @@ public class BlackJackGame extends Game {
                 playerOnePlaying = false;
                 playerTwoTotal = playerTwoHand.sumRankValues(playerTwoHand.getTheHand());
             }
-        } else { //Account for a playing "staying" on the first turn
+        } else { //Account for a player "staying" on the first turn
             playerTwoPlaying = false;
             playerOnePlaying = false;
             playerTwoTotal = playerTwoHand.sumRankValues(playerTwoHand.getTheHand());
@@ -121,7 +112,6 @@ public class BlackJackGame extends Game {
             System.out.print(playerTwoHand.getTheHand().get(i) + " \n");
         }
     }
-
 }
 
 
