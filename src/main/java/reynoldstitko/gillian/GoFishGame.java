@@ -6,20 +6,19 @@ import java.util.Scanner;
  * Created by gillianreynolds-titko on 1/27/17.
  */
 public class GoFishGame extends Game {
+
+    Scanner scanner = new Scanner(System.in);
+    Hand playerOneHand = new Hand();
+    Hand playerTwoHand = new Hand();
+    Deck cardDeck = new Deck();
+
     public void start(){
-
-        Scanner scanner = new Scanner(System.in);
-        Hand playerOneHand = new Hand();
-        Hand playerTwoHand = new Hand();
-
-        Deck cardDeck = new Deck();
 
         //Shuffle the deck
         cardDeck.shuffle();
 
         //Deal 5 cards to each player
-        playerOneHand.addCardsToHand(cardDeck.deal(5));
-        playerTwoHand.addCardsToHand(cardDeck.deal(5));
+        dealCardsToEachPlayer();
 
         boolean isGameOver = false;
 
@@ -58,13 +57,7 @@ public class GoFishGame extends Game {
 
                     //Get the number of cards of the same rank and remove that number
                     int removedCards = playerTwoHand.countCardsInHandOfRank(playerTwoHand.getTheHand(), rank);
-                    for(int i = 1; i <= removedCards; i++){
-                        Card temp = playerTwoHand.removeCardFromHand(rank);
-                        if(temp == null){
-
-                        }else playerOneHand.addCardToHand(temp);
-                        playerTwoHand.getTheHand().trimToSize();
-                    }
+                    removeCardsOfSameRank(removedCards, rank, playerTwoHand, playerOneHand);
 
                 } else {
                     //If no, then respond "Go fish" and deal one card to player from the deck
@@ -93,7 +86,6 @@ public class GoFishGame extends Game {
             while (playerTwoStillPlaying && (playerTwoHand.getTheHand().size() !=0)){
                 System.out.println("Player 2, what rank card do you want to check for (Ace, Two, Three, etc to King)?");
 
-
                 //Get the player response for the rank
                 String rank = scanner.next();
                 //String suit = scanner.next();
@@ -103,16 +95,9 @@ public class GoFishGame extends Game {
                     //If yes, then move all the cards with that rank from player1 to player2,
                     // reducing player2's cards and increasing player 1's cards
 
-
                     //Get the number of cards of the same rank and remove that number
                     int removedCards = playerOneHand.countCardsInHandOfRank(playerOneHand.getTheHand(), rank);
-                    for(int i = 1; i <= removedCards; i++){
-                        Card temp = playerOneHand.removeCardFromHand(rank);
-                        if (temp == null) {
-                        } else playerTwoHand.addCardToHand(temp);
-                        playerOneHand.getTheHand().trimToSize();
-
-                    }
+                    removeCardsOfSameRank(removedCards, rank, playerOneHand, playerTwoHand);
 
                     //Show the player1 list of cards
                     System.out.println("Player 1, you have the following cards:");
@@ -139,9 +124,29 @@ public class GoFishGame extends Game {
             }
 
         }
+        gameOver();
+    }
+
+    //---Refactor to create some helper methods
+    public void dealCardsToEachPlayer(){
+        //Deal 5 cards to each player
+        playerOneHand.addCardsToHand(cardDeck.deal(5));
+        playerTwoHand.addCardsToHand(cardDeck.deal(5));
+    }
+
+    public void gameOver(){
         System.out.print("Player 1, you had "+ playerOneHand.getTheHand().size()+" cards left\n");
         System.out.print("Player 2, you had "+ playerTwoHand.getTheHand().size()+" cards left\n");
         System.out.print("Game over!");
         scanner.close();
+    }
+
+    public void removeCardsOfSameRank(int removedCards, String rank, Hand firstPlayer, Hand otherPlayer){
+        for(int i = 1; i <= removedCards; i++){
+            Card temp = firstPlayer.removeCardFromHand(rank);
+            if (temp == null) {
+            } else otherPlayer.addCardToHand(temp);
+            firstPlayer.getTheHand().trimToSize();
+        }
     }
 }

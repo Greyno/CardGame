@@ -80,7 +80,7 @@ public class BlackJackGame extends Game {
 
     }
 
-    //--Refactored to provide helper methods
+    //--Refactor to provide some helper methods
     public void showGameResults(boolean playerOneStatus, boolean playerTwoStatus){
         if (playerOneStatus == false && playerTwoStatus == false) {
             //Show game results here
