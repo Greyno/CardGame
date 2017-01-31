@@ -18,7 +18,7 @@ public class App {
         switch (chooseGame) {
             case 1: {
                 theGame = new BlackJackGame(); //Using polymorphism
-                System.out.print("You chose to play no-bet BlackJack!\n");
+                System.out.print("You chose to play no-bet BlackJack (where Aces = 1)!\n");
                 break;
             }
 
